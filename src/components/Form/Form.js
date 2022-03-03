@@ -44,7 +44,7 @@ let Form = ({ handleSubmit, typeValue, reset }) => {
           response.json().then((data) => alert('Error: ' + JSON.stringify(data)));
         } else return response.json();
       })
-      .then((data) => JSON.stringify(data));
+      .then((data) => console.log(data));
     reset();
   };
 
