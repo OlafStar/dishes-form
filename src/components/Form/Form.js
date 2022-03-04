@@ -38,13 +38,11 @@ let Form = ({ handleSubmit, typeValue, reset }) => {
       headers: { 'Content-Type': 'application/json' },
       body: valuesJSON,
     };
-    fetch('https://frosty-wood-6558.getsandbox.com:443/dishes', requestOptions)
-      .then((response) => {
-        if (!response.ok) {
-          response.json().then((data) => alert('Error: ' + JSON.stringify(data)));
-        } else return response.json();
-      })
-      .then((data) => console.log(data));
+    fetch('https://frosty-wood-6558.getsandbox.com:443/dishes', requestOptions).then((response) => {
+      if (!response.ok) {
+        response.json().then((data) => alert('Error: ' + JSON.stringify(data)));
+      } else return response.json().then((data) => alert(JSON.stringify(data)));
+    });
     reset();
   };
 
